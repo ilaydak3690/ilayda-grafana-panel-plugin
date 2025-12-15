@@ -1,50 +1,135 @@
-<!-- This README file is going to be the one displayed on the Grafana.com website for your plugin. Uncomment and replace the content here before publishing.
+# Ilayda Grafana Panel Plugin
 
-Remove any remaining comments before publishing as these may be displayed on Grafana.com -->
+## Overview
+This project is a **custom Grafana panel plugin** developed as a **final project**.  
+The plugin demonstrates how to build a React + TypeScript based Grafana panel that dynamically reacts to incoming data and user configuration options.
 
-# ilayda.plugin
+The panel visualizes data using a circular SVG element whose appearance changes based on:
+- Query (series) count
+- User-defined panel options
+- Grafana theme (light / dark)
 
-<!-- To help maximize the impact of your README and improve usability for users, we propose the following loose structure:
+**Developed by:**  
+**İlayda Kızılırmak**
 
-**BEFORE YOU BEGIN**
-- Ensure all links are absolute URLs so that they will work when the README is displayed within Grafana and Grafana.com
-- Be inspired ✨
-  - [grafana-polystat-panel](https://github.com/grafana/grafana-polystat-panel)
-  - [volkovlabs-variable-panel](https://github.com/volkovlabs/volkovlabs-variable-panel)
+---
 
-**ADD SOME BADGES**
+## ✨ Features
 
-Badges convey useful information at a glance for users whether in the Catalog or viewing the source code. You can use the generator on [Shields.io](https://shields.io/badges/dynamic-json-badge) together with the Grafana.com API
-to create dynamic badges that update automatically when you publish a new version to the marketplace.
+### ✅ Core Requirements (Mandatory)
+- Custom Grafana **panel plugin**
+- Successfully builds and loads inside Grafana
+- Displays the student’s name inside the plugin UI  
+  *(“Developed by İlayda Kızılırmak”)*
 
-- For the URL parameter use `https://grafana.com/api/plugins/your-plugin-id`.
-- Example queries:
-  - Downloads: `$.downloads`
-  - Catalog Version: `$.version`
-  - Grafana Dependency: `$.grafanaDependency`
-  - Signature Type: `$.versionSignatureType`
-- Optionally, for the logo parameter use `grafana`.
+---
 
-Full example: ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?logo=grafana&query=$.version&url=https://grafana.com/api/plugins/grafana-polystat-panel&label=Marketplace&prefix=v&color=F47A20)
+## 🎁 Bonus Features
 
-Consider other [badges](https://shields.io/badges) as you feel appropriate for your project.
+### 🔹 Bonus 1 – Custom Panel Options
+- Editable text option
+- Series counter display
+- Adjustable base circle radius
+- Custom circle color
+- Toggleable developer signature
 
-## Overview / Introduction
-Provide one or more paragraphs as an introduction to your plugin to help users understand why they should use it.
+---
 
-Consider including screenshots:
-- in [plugin.json](https://grafana.com/developers/plugin-tools/reference/plugin-json#info) include them as relative links.
-- in the README ensure they are absolute URLs.
+### 🔹 Bonus 2 – UI & Customization
+- Panel options allow real-time customization
+- Signature text can be changed dynamically
+- Responsive SVG rendering
 
-## Requirements
-List any requirements or dependencies they may need to run the plugin.
+---
 
-## Getting Started
-Provide a quick start on how to configure and use the plugin.
+### 🔹 Bonus 3 – Theme-Aware Visualization
+- Circle color automatically adapts to Grafana **light/dark theme**
+- Optional override with a custom color picker
 
-## Documentation
-If your project has dedicated documentation available for users, provide links here. For help in following Grafana's style recommendations for technical documentation, refer to our [Writer's Toolkit](https://grafana.com/docs/writers-toolkit/).
+---
 
-## Contributing
-Do you want folks to contribute to the plugin or provide feedback through specific means? If so, tell them how!
--->
+### 🔹 Bonus 4 – Data-Driven Dynamic Visualization
+The panel dynamically reacts to incoming data:
+
+- The number of query series is read from `data.series.length`
+- Circle radius is calculated using the formula:
+
+```
+dynamicRadius = min(
+  baseRadius + seriesCount × radiusPerSeries,
+  maxRadius
+)
+```
+
+- Users can control:
+  - Growth per series
+  - Maximum radius cap
+
+The calculated radius is displayed directly on the panel for transparency.
+
+---
+
+## 🧠 How It Works (Technical Summary)
+
+- **Grafana queries** populate `data.series`
+- The panel uses React and SVG to render visuals
+- Panel options are defined via `setPanelOptions`
+- Visualization updates automatically when:
+  - Query count changes
+  - Panel options are modified
+  - Theme switches between light/dark mode
+
+---
+
+## 🛠 Installation & Development
+
+### Prerequisites
+- Node.js
+- Docker
+- Grafana
+
+### Run in Development Mode
+```bash
+npm install
+npm run build
+docker compose up
+```
+
+Grafana will be available at:
+```
+http://localhost:3000
+```
+
+---
+
+## 📸 Screenshots
+Add a screenshot of the panel running in Grafana here.
+
+---
+
+## 🎥 Demo Video
+A short demo video (1–2 minutes) showing:
+- Plugin loaded in Grafana
+- Panel options
+- Dynamic radius behavior
+- Developer signature
+
+---
+
+## 📁 Repository
+GitHub Repository:  
+https://github.com/ilaydak3690/ilayda-grafana-panel-plugin
+
+---
+
+## ✅ Conclusion
+This project successfully demonstrates:
+- Custom Grafana plugin development
+- React + TypeScript integration
+- Dynamic, data-driven UI behavior
+- Clean and configurable visualization design
+
+---
+
+## 🧑‍🎓 Author
+**İlayda Kızılırmak**
