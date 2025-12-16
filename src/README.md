@@ -67,6 +67,10 @@ dynamicRadius = min(
 
 The calculated radius is displayed directly on the panel for transparency.
 
+### 🔹 Bonus 5 – Time-Series Data Awareness
+The panel reads time-series query results from Grafana and extracts the latest numeric value along with its timestamp.  
+This ensures the visualization reacts dynamically to the selected time range.
+
 ---
 
 ## 🧠 How It Works (Technical Summary)
@@ -102,17 +106,13 @@ http://localhost:3000
 
 ---
 
-## 📸 Screenshots
-Add a screenshot of the panel running in Grafana here.
+## 📸 Screenshot – Plugin Running in Grafana
 
----
+The screenshot below shows the custom panel plugin running inside Grafana.
+The developer name and dynamic panel options are clearly visible.
 
-## 🎥 Demo Video
-A short demo video (1–2 minutes) showing:
-- Plugin loaded in Grafana
-- Panel options
-- Dynamic radius behavior
-- Developer signature
+![Grafana Panel Screenshot](./img/grafana-panel.png)
+
 
 ---
 
@@ -129,7 +129,80 @@ This project successfully demonstrates:
 - Dynamic, data-driven UI behavior
 - Clean and configurable visualization design
 
+##github: https://github.com/ilaydak3690/ilayda-grafana-panel-plugin
+
 ---
 
 ## 🧑‍🎓 Author
-**İlayda Kızılırmak**
+*İlayda Kızılırmak 2022502105*
+
+# Ilayda Grafana Panel Plugin
+
+## Overview
+This project is a custom Grafana panel plugin developed as a final course project.  
+The plugin demonstrates the design and implementation of a React and TypeScript based visualization that dynamically reacts to time-series data and user-defined configuration options.
+
+The panel renders a custom SVG-based visualization and integrates directly with Grafana’s query and theming system.
+
+**Author:** İlayda Kızılırmak
+
+---
+
+## Core Requirements
+- Custom Grafana panel plugin implementation  
+- Successful build and execution inside Grafana  
+- Developer name displayed within the panel interface  
+
+---
+
+## Implemented Bonus Features
+- Configurable panel options including editable text, series counter toggle, circle radius control, color selection, and signature visibility  
+- Real-time UI updates without page reload  
+- Theme-aware visualization supporting Grafana light and dark modes  
+- Data-driven circle scaling based on the number of active query series with a maximum radius limit  
+- Display of calculated radius value for transparency  
+- Extraction and display of the latest numeric value from time-series query results  
+- Display of the timestamp corresponding to the latest data point  
+- Custom time-series visualization using TestData scenarios (USD, EUR, Gold, Silver in TRY)  
+- Professional documentation and a short demo video  
+
+---
+
+## Technical Summary
+- Query data is accessed via `data.series`  
+- Visualization is rendered using React and SVG  
+- Panel options are defined with `setPanelOptions`  
+- The panel updates automatically when data, options, or theme settings change  
+
+---
+
+## Installation
+```bash
+npm install
+npm run build
+docker compose up
+```
+
+Grafana runs at:
+```
+http://localhost:3000
+```
+
+---
+
+## Submission Materials
+- GitHub repository link  
+- Plugin source code  
+- Screenshot of the plugin running inside Grafana with developer name visible  
+- Short demo video demonstrating functionality  
+
+---
+
+## Conclusion
+The project satisfies all mandatory requirements and includes multiple optional enhancements.  
+It demonstrates practical knowledge of Grafana plugin development, dynamic data handling, and configurable UI design.
+
+---
+
+## Author
+İlayda Kızılırmak (2022502105)

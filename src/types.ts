@@ -17,4 +17,8 @@ export interface SimpleOptions {
   // Bonus 4 – data‑driven radius
   radiusPerSeries?: number; // how much radius grows per series
   maxRadius?: number;       // maximum allowed radius
+
+  // Bonus 5 – time-series value scaling
+  minValue?: number;        // minimum value for scaling
+  maxValue?: number;        // maximum value for scaling
 }

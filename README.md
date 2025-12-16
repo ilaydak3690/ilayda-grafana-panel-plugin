@@ -69,6 +69,38 @@ Use panel plugins when you want to do things like visualize data returned by dat
    npm run lint:fix
    ```
 
+---
+
+## 🔹 Bonus: Time-Series Data Awareness & Dynamic Visualization
+
+This panel plugin dynamically visualizes the latest value from your time-series data:
+
+- **Dynamic Circle:** The blue circle in the panel changes its radius and color based on the latest numeric value from your query results. The value is also displayed inside the circle.
+- **Live Value & Timestamp:** The most recent value and its timestamp are shown below the visualization, updating as your data changes or as you adjust the dashboard time range.
+- **Color Coding:**
+  - Blue: Low values
+  - Green: Medium values
+  - Red: High values
+- **Configurable Scaling:** You can set `minValue` and `maxValue` in the panel options to control how your data maps to the circle's size and color.
+- **Signature:** Your name is always visible for grading, as required.
+
+### Example Usage
+
+1. Add the panel to your Grafana dashboard.
+2. Connect it to a time-series data source (e.g., random walk, Prometheus, etc.).
+3. The circle will animate and update as new data arrives or the time range changes.
+4. Adjust `minValue` and `maxValue` in the panel options for best scaling with your data.
+
+### 📸 Panel Screenshot
+
+Below is a screenshot of the plugin running inside Grafana, showing the dynamic blue circle and the required signature:
+
+![Panel Screenshot](./img/panel-screenshot.png)
+
+> The blue circle visualizes the latest value from your time-series data. Your name is always visible for grading.
+
+---
+
 # Distributing your plugin
 
 When distributing a Grafana plugin either within the community or privately the plugin must be signed so the Grafana application can verify its authenticity. This can be done with the `@grafana/sign-plugin` package.
